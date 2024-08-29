@@ -23,6 +23,7 @@ nav a {
     font-weight: bold;
     font-size: 30px;
     color: rgb(248, 248, 248);
+    text-decoration: none;
 }
 
 .container {
@@ -220,8 +221,268 @@ footer {
  font-weight: bold;
  font-size: larger;
 }
+.switch {
+    display: block;
+    --width-of-switch: 3.5em;
+    --height-of-switch: 2em;
+
+    --size-of-icon: 1.4em;
+
+    --slider-offset: 0.3em;
+    position: relative;
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+  }
+  
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f4f4f5;
+    transition: .4s;
+    border-radius: 30px;
+    
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon,1.4em);
+    width: var(--size-of-icon,1.4em);
+    border-radius: 20px;
+    left: var(--slider-offset,0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+    ;
+   transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #303136;
+  }
+  
+  input:checked + .slider:before {
+    left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+    background: #303136;
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+  }
+ 
+.form-container {
+    width: 350px;
+    height: 500px;
+    background-color: #fffdfd;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px 30px;
+   
+  }
+  
+  .title {
+    text-align: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    margin: 10px 0 30px 0;
+    font-size: 28px;
+    font-weight: 800;
+  }
+  
+  .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .input {
+    border-radius: 20px;
+    border: 1px solid #c0c0c0;
+    outline: 0 !important;
+    box-sizing: border-box;
+    padding: 12px 15px;
+  }
+  
+  .page-link {
+    text-decoration: underline;
+    margin: 0;
+    text-align: end;
+    color: #747474;
+    text-decoration-color: #747474;
+  }
+  
+  .page-link-label {
+    cursor: pointer;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+  }
+  
+  .page-link-label:hover {
+    color: #000;
+  }
+  
+  .form-btn {
+    padding: 10px 15px;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    border-radius: 20px;
+    border: 0 !important;
+    outline: 0 !important;
+    background: teal;
+    color: white;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  
+  .form-btn:active {
+    box-shadow: none;
+  }
+  
+  .sign-up-label {
+    margin: 0;
+    font-size: 10px;
+    color: #747474;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  
+  .sign-up-link {
+    margin-left: 1px;
+    font-size: 11px;
+    text-decoration: underline;
+    text-decoration-color: teal;
+    color: teal;
+    cursor: pointer;
+    font-weight: 800;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  
+  .buttons-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 20px;
+    gap: 15px;
+  }
+  
+  .apple-login-button,
+      .google-login-button {
+    border-radius: 20px;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+          rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 11px;
+    gap: 5px;
+  }
+  
+  .apple-login-button {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #000;
+  }
+  
+  .google-login-button {
+    border: 2px solid #747474;
+  }
+  
+  .apple-icon,
+      .google-icon {
+    font-size: 18px;
+    margin-bottom: 1px;
+  }
 
 
+i {
+    font-size: 35px;
+    cursor: pointer;
+    margin: 0 10px;
+    color: black;
+}
 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.shopping-card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e7e7e7;
+    border-radius: 10px;
+    padding: 3%;
+    margin: 50px 0;
+}
 
+.total-price span {
+    font-size: 30px;
+}
+
+.total {
+    font-weight: bold;
+}
+
+.list-products {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 70%;
+}
+
+.card {
+    padding: 5%;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity {
+    font-size: 25px;
+}
+
+.card-body div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.fa-trash-alt {
+    color: #de6b5c;
+}
+
+.jolie{
+   
+  background-image:url(../../Pictures/30669f9153dd5e55a928159910b7ff9a.jpg) ;
+  
+
+}
